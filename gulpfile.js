@@ -33,7 +33,7 @@ gulp.task('gitJS', ['clean', 'git-hash'], function() {
 
 gulp.task('inject', ['gitJS'], function() {
     return gulp.src('app/index.html')
-        .pipe(inject(gulp.src('dist/script-*.js', {read: false}), {relative: true, ignorePath: 'dist'}))
+        .pipe(inject(gulp.src('dist/script-*.js', {read: false}), {relative: true, ignorePath: '../dist'}))
         .pipe(gulp.dest('dist'));
 });
 
